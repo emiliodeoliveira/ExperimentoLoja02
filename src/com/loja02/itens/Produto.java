@@ -1,4 +1,7 @@
+package com.loja02.itens;
 import java.util.Scanner;
+
+import com.loja02.interfaces.Interfaces;
 /**
  * 
  * @author eoliveira
@@ -11,9 +14,9 @@ public class Produto {
 	private String skuProduto; 
 
 	public Produto() {
-		setNomeProd(readString("Digite o nome do produto: "));
-		setPrecoProd(Double.parseDouble(readString("Digite o preço do produto: ")));
-		setSkuProduto(readString("Digite o SKU do produto: "));
+		setNomeProd(Interfaces.readString("Digite o nome do produto: "));
+		setPrecoProd(Double.parseDouble(Interfaces.readString("Digite o preço do produto: ")));
+		setSkuProduto(Interfaces.readString("Digite o SKU do produto: "));
 	}
 
 	public String getNomeProd() {
@@ -35,13 +38,6 @@ public class Produto {
 
 	public void setSkuProduto(String skuProduto) {
 		this.skuProduto = skuProduto;
-	}
-	
-	private static String readString(String msg) {
-		Scanner a = new Scanner(System.in);
-		System.out.println(msg);
-		return a.nextLine();
-
 	}
 
 	@Override

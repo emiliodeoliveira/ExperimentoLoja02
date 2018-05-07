@@ -1,3 +1,4 @@
+import com.loja02.itens.Produto;
 
 public class Carrinho {
 	private Produto produtoAdicionado; 

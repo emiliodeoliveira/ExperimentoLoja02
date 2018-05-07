@@ -1,4 +1,6 @@
 import java.util.Scanner;
+import com.loja02.interfaces.*;
+import com.loja02.itens.Produto;
 /**
  * 
  * @author Emilio de Oliveira
@@ -11,7 +13,7 @@ public class Teste {
 	public static void main(String[] args) {	
 
 		while (true) {
-			switch (readString(menu()).charAt(0)) {
+			switch (Interfaces.readString(menu()).charAt(0)) {
 			case '1':
 				cadastraProduto();
 				break;
@@ -56,28 +58,17 @@ public class Teste {
 	}
 
 	private static void cadastraProduto() {
-		// String nome = readString("Digite o nome do produto: ");
-		// double preco = Double.parseDouble(readString("Digite o preço do produto: "));
-		// String sku = readString("Digite o SKU do produto: ");
 		for (int b = 0; b < produto.length; b++) {
 			if (produto[b] == null) {
 				produto[b] = new Produto();
-				//produto[b] = new Produto(nome, preco, sku);
 				return;
 			}
 		}
 	}
 
-	private static String readString(String msg) {
-		Scanner a = new Scanner(System.in);
-		System.out.println(msg);
-		return a.nextLine();
-
-	}
-
 	private static void insereCarrinho() {
 		listarProduto();
-		int ind = Integer.parseInt(readString("Digite o número da opção : "));
+		int ind = Integer.parseInt(Interfaces.readString("Digite o número da opção : "));
 		Produto temp = produto[ind];
 		for (int b = 0; b < vCarrinho.length; b++) {
 			if (vCarrinho[b] == null) {
